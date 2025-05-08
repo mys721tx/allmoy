@@ -14,12 +14,6 @@ PKGNAME := allmoy
 BINNAME := allmoy
 PACKAGE := ${PKGNAME}-${VERSION}-${OS}
 
-ifneq (,$(findstring gccgo,$(GOCC)))
-	export GOPATH=$(shell pwd)/.go
-	LDFLAGS := -gccgoflags '-s -w'
-	MOD :=
-endif
-
 default: build
 
 all: | clean package
@@ -37,7 +31,7 @@ test:
 	go test -v ${MOD}
 
 build:
-	go build -v ${LDFLAGS} -o ${BINNAME} ${MOD}
+	CGO_ENABLED=0 go build -v ${LDFLAGS} -o ${BINNAME} ${MOD}
 
 release: | test build
 	mkdir ${PACKAGE}
