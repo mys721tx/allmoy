@@ -1,0 +1,23 @@
+
+redis_url: "redis://redis:6379/0"
+
+providers:
+  - name: openai
+    api_url: https://api.openai.com/v1/
+    api_key: sk-your-openai-key
+    type: openai
+
+  - name: anthropic
+    api_url: https://api.anthropic.com/v1/
+    api_key: sk-your-anthropic-key
+    type: openai
+
+  - name: google
+    api_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    api_key: your-google-api-key
+    type: openai
+
+  - name: ollama
+    api_url: http://ollama:11434
+    api_key: ""
+    type: ollama

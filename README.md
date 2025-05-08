@@ -1,9 +1,6 @@
-
 # Allmoy
 
-**Allmoy** is a unified router and aggregator for LLM providers (OpenAI,
-*Anthropic, Google, Ollama) with built-in Redis/Valkey caching and automatic
-*model discovery.
+**Allmoy** is An aggregator for OpenAI APIs.
 
 ## Author
 
